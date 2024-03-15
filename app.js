@@ -1,140 +1,84 @@
-alert("Assignment no 19");
+alert("assignment 20");
+
+
 
 
 let studentNamesLiteral = [];
+
 let studentNamesObject = new Array();
-let stringsArray = ["apple", "banana", "cherry"];
+
+let stringsArray = ['apple', 'banana', 'cherry'];
+
 let numbersArray = [1, 2, 3, 4, 5];
-let booleanArray = [true, false, true];
-let mixedArray = ["John", 25, true, "apple"];
-let educationQualifications = ["SSC", "HSC", "BCS", "BS", "BCOM", "MS", "M. Phil.", "PhD"];
 
-// Display in the browser
-document.write("<h3>Education Qualifications in Pakistan:</h3>");
-document.write("<ul>");
+let booleanArray = [true, false, true, true];
 
-for (let i = 0; i < educationQualifications.length; i++) {
-    document.write("<li>" + educationQualifications[i] + "</li>");
+let mixedArray = ['apple', 1, true, null, undefined];
+
+let educationQualifications = ['SSC', 'HSC', 'BCS', 'BS', 'BCOM', 'MS', 'M. Phil.', 'PhD'];
+
+console.log("Education Qualifications in Pakistan:");
+educationQualifications.forEach(qualification => {
+    console.log(qualification);
+});
+
+
+
+
+let studentNames = ["John", "Alice", "Bob"];
+
+let scores = [430, 380, 450];
+
+function calculatePercentage(score) {
+    return (score / 500) * 100;
 }
 
-document.write("</ul>");
-
-
-
-
-
-
-
-let studentNames = ["ahmed", "zain", "muskan"];
-let studentScores = [420, 480, 350];
-
-
-const totalMarks = 500;
-
-
-
-document.write("<h3>Student Scores and Percentages:</h3>");
-document.write("<table border='1'>");
-document.write("<tr><th>Student Name</th><th>Score</th><th>Percentage</th></tr>");
-
-
-
+console.log("Student Scores and Percentages:");
 for (let i = 0; i < studentNames.length; i++) {
-    const percentage = (studentScores[i] / totalMarks) * 100;
-    document.write("<tr>");
-    document.write("<td>" + studentNames[i] + "</td>");
-    document.write("<td>" + studentScores[i] + "</td>");
-    document.write("<td>" + percentage.toFixed(2) + "%</td>");
-    document.write("</tr>");
+    console.log(`${studentNames[i]} scored ${scores[i]} out of 500, Percentage: ${calculatePercentage(scores[i])}%`);
 }
 
-document.write("</table>");
 
 
 
 
+ let colors = ["red", "green", "blue"];
+
+ document.write("<b>Initial array:</b> " + colors.join(", ") + "<br><br>");
+ let colorToAddStart = prompt("Enter a color to add to the beginning:");
+ colors.unshift(colorToAddStart);
+ document.write("<b>Array after adding color to the beginning:</b> " + colors.join(", ") + "<br><br>");
+
+
+ let colorToAddEnd = prompt("Enter a color to add to the end:");
+ colors.push(colorToAddEnd);
+ document.write("<b>Array after adding color to the end:</b> " + colors.join(", ") + "<br><br>");
+
+ colors.unshift("purple", "yellow");
+ document.write("<b>Array after adding two colors to the beginning:</b> " + colors.join(", ") + "<br><br>");
+
+ colors.shift();
+ document.write("<b>Array after deleting the first color:</b> " + colors.join(", ") + "<br><br>");
+
+ colors.pop();
+ document.write("<b>Array after deleting the last color:</b> " + colors.join(", ") + "<br><br>");
+
+ 
+ let positionToAdd = parseInt(prompt("Enter the index at which you want to add a color:"));
+ let colorToAdd = prompt("Enter the color name:");
+ colors.splice(positionToAdd, 0, colorToAdd);
+ document.write("<b>Array after adding color at a user-defined position:</b> " + colors.join(", ") + "<br><br>");
+
+
+ let positionToDelete = parseInt(prompt("Enter the index from which you want to delete color(s):"));
+ let numberOfColorsToDelete = parseInt(prompt("Enter the number of colors you want to delete:"));
+ colors.splice(positionToDelete, numberOfColorsToDelete);
+ document.write("<b>Array after deleting color(s) from user-defined position:</b> " + colors.join(", ") + "<br><br>");
 
 
 
 
-let colors = ["Red", "Green", "Blue"];
-
-
-document.write("<h3>Original Array:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-
-let userColorStart = prompt("Enter a color to add to the beginning of the array:");
-colors.unshift(userColorStart);
-
-
-document.write("<h3>After adding color to the beginning:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-
-let userColorEnd = prompt("Enter a color to add to the end of the array:");
-colors.push(userColorEnd);
-
-
-document.write("<h3>After adding color to the end:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-
-colors.unshift("Purple", "Orange");
-
-
-document.write("<h3>After adding two more colors to the beginning:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-colors.shift();
-
-
-document.write("<h3>After deleting the first color:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-
-colors.pop();
-
-
-document.write("<h3>After deleting the last color:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-
-let userIndex = prompt("Enter the index where you want to add a color:");
-let userColorAdd = prompt("Enter the color name to add at that index:");
-colors.splice(userIndex, 0, userColorAdd);
-
-
-document.write("<h3>After adding color at a user-defined index:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-
-let userDeleteIndex = prompt("Enter the index from which you want to delete color(s):");
-let deleteCount = prompt("Enter the number of colors you want to delete:");
-colors.splice(userDeleteIndex, deleteCount);
-
-
-document.write("<h3>After deleting color(s) at a user-defined index:</h3>");
-document.write("<p>" + colors.join(", ") + "</p>");
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let studentScores = [78, 92, 64, 85, 97];
-//  
-
-
-document.write("<h3>Original Student Scores:</h3>");
-document.write("<p>" + studentScores.join(", ") + "</p>");
+let studentScores = [85, 92, 78, 90, 88];
 
 
 studentScores.sort(function(a, b) {
@@ -142,8 +86,30 @@ studentScores.sort(function(a, b) {
 });
 
 
-document.write("<h3>Sorted Student Scores (Ascending Order):</h3>");
-document.write("<p>" + studentScores.join(", ") + "</p>");
+console.log("Sorted student scores in ascending order:");
+console.log(studentScores);
+
+
+
+
+
+let cities = ["New York", "London", "Paris", "Tokyo", "Sydney"];
+
+let selectedCities = cities.slice(0, 3);
+
+console.log("Selected cities:");
+console.log(selectedCities);
+
+
+
+
+
+
+var arr = ["This", "is", "my", "cat"];
+
+var singleString = arr.join(' ');
+
+console.log(singleString);
 
 
 
@@ -151,21 +117,41 @@ document.write("<p>" + studentScores.join(", ") + "</p>");
 
 
 
+let fifoArray = [];
 
-let cities = ["New York", "London", "Tokyo", "Paris", "Sydney"];
+fifoArray.push("Value1");
+fifoArray.push("Value2");
+fifoArray.push("Value3");
 
-document.write("<h3>Original City Names:</h3>");
-document.write("<p>" + cities.join(", ") + "</p>");
+let value1 = fifoArray.shift(); 
+let value2 = fifoArray.shift(); 
+let value3 = fifoArray.shift();
+
+console.log("Values retrieved in FIFO order:");
+console.log(value1);
+console.log(value2);
+console.log(value3); 
 
 
-let selectedCities = cities.slice(1, 4);
-
-document.write("<h3>Selected Cities:</h3>");
-document.write("<p>" + selectedCities.join(", ") + "</p>");
 
 
 
 
+
+let lifoArray = [];
+
+lifoArray.push("Value1");
+lifoArray.push("Value2");
+lifoArray.push("Value3");
+
+let value3 = lifoArray.pop();
+let value2 = lifoArray.pop();
+let value1 = lifoArray.pop();
+
+console.log("Values retrieved in LIFO order:");
+console.log(value3);
+console.log(value2);
+console.log(value1);
 
 
 
@@ -179,3 +165,46 @@ var resultString = arr.join(" ");
 
 // Display the result string
 document.write("<p>" + resultString + "</p>");
+
+
+
+
+
+
+
+let multiDimArray = [];
+
+multiDimArray.push([]);
+multiDimArray.push([]);
+multiDimArray.push([]);
+
+multiDimArray[0].push(1);
+multiDimArray[0].push(2);
+multiDimArray[0].push(3);
+
+multiDimArray[1].push("apple");
+multiDimArray[1].push("banana");
+
+multiDimArray[2].push(true);
+multiDimArray[2].push(false);
+
+
+
+
+
+
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+
+
+1 2 3
+4 5 6
+7 8 9
+
+
+
+
