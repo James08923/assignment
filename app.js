@@ -1,144 +1,170 @@
-var now = new Date();
-var datetimeElement = document.getElementById('datetime');
-// datetimeElement.textContent = now.toLocaleString();
-
-
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var now = new Date();
-var currentMonth = months[now.getMonth()];
-alert("Current month is: " + currentMonth);
-
-
-var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-var now = new Date();
-var currentDayIndex = now.getDay();
-var currentDayAbbreviation = days[currentDayIndex];
-alert("Today is: " + currentDayAbbreviation);
-
-
-var now = new Date();
-var currentDayIndex = now.getDay();
-
-if (currentDayIndex === 0 || currentDayIndex === 6) {
-    alert("It's Fun day!");
-} else {
-    alert("It's Fun day. Keep going!");
-}
-
-
-var now = new Date();
-            var currentDate = now.getDate();
-
-            if (currentDate <= 15) {
-                alert("First fifteen days of the month");
-            } else {
-                alert("Last days of the month");
-            }
-
-
-var currentDate = new Date();
-
-
-var minutesSinceEpoch = currentDate.getTime() / (1000 * 60);
-
-
-console.log("Minutes since midnight, Jan. 1, 1970:", minutesSinceEpoch);
-
-
-var now = new Date();
-var currentHour = now.getHours();
-
-if (currentHour < 12) {
-    alert("It's AM");
-} else {
-    alert("It's PM");
-}
-
-
-var laterDate = new Date(2020, 11, 31);
-
-
-console.log("Later Date:", laterDate);
-
-
-var ramadanStartDate = new Date(2015, 5, 18); 
-
-
-var currentDate = new Date();
-
-var timeDifference = currentDate.getTime() - ramadanStartDate.getTime();
-
-
-var daysSinceRamadanStart = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-alert("Number of days past since 1st Ramadan: " + daysSinceRamadanStart);
+document.getElementById("myLink").addEventListener("click", function(event) {
+    event.preventDefault();
+    alert("You clicked the link!");
+  });
 
 
 
-        var beginningOf2015 = new Date(2015, 0, 1, 0, 0, 0);
+  image.forEach(image => {
+    image.addEventListener('click', function() {
+      alert("You clicked on: " + this.alt);
+    });
+  });
 
-        var referenceDate = new Date();
+  function deleteRow(button) {
+  
+    var row = button.parentNode.parentNode;
+  
+    row.parentNode.removeChild(row);}
 
-        var secondsElapsed = Math.floor((referenceDate - beginningOf2015) / 1000);
-
-        document.write("Seconds elapsed since the beginning of 2015: " + secondsElapsed);
 
 
-       
-        var currentDate = new Date();
+    function changeImage() {
+      document.getElementById("main-image").src = "https://www.91-cdn.com/hub/wp-content/uploads/2023/01/samsung-galaxy-s23-ultra.jpg";
+  }
 
-      
-        var currentHours = currentDate.getHours();
+ 
+  function resetImage() {
+      document.getElementById("main-image").src = "https://www.91-cdn.com/hub/wp-content/uploads/2023/01/samsung-galaxy-s23-ultra.jpg";
+  }
+
+
+  // document.getElementById("https://www.91-cdn.com/hub/wp-content/uploads/2023/01/samsung-galaxy-s23-ultra.jpg").addEventListener("mouseover", changeImage);
+  // document.getElementById("https://www.91-cdn.com/hub/wp-content/uploads/2023/01/samsung-galaxy-s23-ultra.jpg").addEventListener("mouseout", resetImage);
+
+
+  document.getElementById("image-container").addEventListener("mouseover", changeImage);
+  document.getElementById("image-container").addEventListener("mouseout", resetImage);
+
+
+
+
+
+
+  let counterValue = 0;
 
    
-        currentDate.setHours(currentHours + 1);
+    function updateCounter() {
+        document.getElementById("counter").innerText = counterValue;
+    }
 
 
-        document.write("Updated Date Object: " + currentDate);
+    function increaseCounter() {
+        counterValue++;
+        updateCounter();
+    }
+
+    function decreaseCounter() {
+        counterValue--;
+        updateCounter();
+    }
 
 
-         var currentDate = new Date();
-
-         currentDate.setFullYear(currentDate.getFullYear() - 100);
-
-         alert("Date 100 years back: " + currentDate);
-
-
-
-        var age = prompt("Please enter your age:");
-
-        var currentYear = new Date().getFullYear();
-        var birthYear = currentYear - parseInt(age);
-
-        document.write("Your birth year is: " + birthYear);
-
-
-
-
-
-        var customerName = prompt("Enter customer name:");
-        var currentMonth = prompt("Enter current month:");
-        var numberOfUnits = parseFloat(prompt("Enter number of units:"));
-        var chargesPerUnit = parseFloat(prompt("Enter charges per unit:"));
-        var latePaymentSurchargeRate = parseFloat(prompt("Enter late payment surcharge rate (in %):"));
 
   
-        var netAmountPayable = numberOfUnits * chargesPerUnit;
-
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+      event.preventDefault()
+      
+      // Get form data
+      const formData = new FormData(this);
+      const userData = {};
+      
     
-        var latePaymentSurcharge = (latePaymentSurchargeRate / 100) * netAmountPayable;
+      formData.forEach(function(value, key) {
+          userData[key] = value;
+      });
+    
+      const displayDiv = document.getElementById("display-data");
+      displayDiv.innerHTML = "<h2>Submitted Data:</h2>";
+      for (const key in userData) {
+          if (userData.hasOwnProperty(key)) {
+              displayDiv.innerHTML += "<p><strong>" + key + ":</strong> " + userData[key] + "</p>";
+          }
+      }
+      
+      this.reset();
+  })
 
-        var grossAmountPayable = netAmountPayable + latePaymentSurcharge;
 
-        netAmountPayable = netAmountPayable.toFixed(2);
-        latePaymentSurcharge = latePaymentSurcharge.toFixed(2);
-        grossAmountPayable = grossAmountPayable.toFixed(2);
 
-        document.write("<h2>K-Electric Bill</h2>");
-        document.write("<p>Customer Name: " + customerName + "</p>");
-        document.write("<p>Current Month: " + currentMonth + "</p>");
-        document.write("<p>Number of Units: " + numberOfUnits + "</p>");
-        document.write("<p>Charges Per Unit: " + chargesPerUnit.toFixed(2) + "</p>");
-        document.write("<p>Net Amount Payable (within Due Date): " + netAmountPayable + "</p>");
-        document.write("<p>Late Payment Surcharge: " + latePaymentSurcharge + "</p>");
-        document.write("<p>Gross Amount Payable (after Due Date): " + grossAmountPayable + "</p>");
+  const readMoreButtons = document.querySelectorAll(".read-more-btn");
+
+  
+    readMoreButtons.forEach(button => {
+        button.addEventListener("click", function() {
+      
+            const fullDetails = this.nextElementSibling;
+            fullDetails.style.display = fullDetails.style.display === "none" ? "block" : "none";
+            
+  
+            this.innerText = fullDetails.style.display === "none" ? "Read more" : "Read less";
+        });
+    });
+
+
+
+
+
+
+
+    document.getElementById("student-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+
+      const name = document.getElementById("Ahmed").value;
+      const age = document.getElementById("17").value;
+      const grade = document.getElementById("A+").value;
+      
+    
+      const newRow = document.createElement("tr");
+      newRow.innerHTML = `
+          <td>${zain}</td>
+          <td>${22}</td>
+          <td>${A}</td>
+          <td>
+              <button onclick="editRow(this)">Edit</button>
+              <button onclick="deleteRow(this)">Delete</button>
+          </td>
+      `;
+      
+      // Append new row to the table
+      document.getElementById("table-body").appendChild(newRow);
+      
+      // Clear the form fields
+      this.reset();
+  });
+
+  // Function to delete a row from the table
+  function deleteRow(button) {
+      button.closest("tr").remove();
+  }
+
+  // Function to edit a row
+  function editRow(button) {
+      const row = button.closest("tr");
+      const cells = row.querySelectorAll("td");
+      document.getElementById("edit-name").value = cells[0].innerText;
+      document.getElementById("33").value = cells[1].innerText;
+      document.getElementById("edit-grade").value = cells[2].innerText;
+      
+      // Display the edit form
+      document.getElementById("edit-form").style.display = "block";
+      
+      // Set up event listener for edit form submission
+      document.getElementById("edit-form").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent form submission
+          
+          // Update the row with edited values
+          cells[0].innerText = document.getElementById("edit-name").value;
+          cells[1].innerText = document.getElementById("edit-age").value;
+          cells[2].innerText = document.getElementById("edit-grade").value;
+          
+          // Hide the edit form
+          document.getElementById("edit-form").style.display = "none";
+      });
+  }
+
+
+  function cancelEdit() {
+      document.getElementById("edit-form").style.display = "none";
+  }
